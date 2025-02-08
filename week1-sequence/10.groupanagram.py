@@ -4,8 +4,8 @@ from collections import defaultdict
 class Solution:
     def groupAnagrams(strs: list[str]) -> list[list[str]]:
         res = defaultdict(list)
+        print(res)
         
-
         for s in strs:
             count = [0]*26
             for c in s:
@@ -14,9 +14,5 @@ class Solution:
             res[tuple(count)].append(s)
 
         return res.values()
-
-
-
-
 
     print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))

@@ -5,7 +5,7 @@
 #         self.next = None
 
 class Solution:
-  def hasCycle(self, head: ListNode) -> bool:
+  def hasCycle(self, head: ListNode) -> bool: # type: ignore
     slow = head
     fast = head
     while fast and fast.next:
