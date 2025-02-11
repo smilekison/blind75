@@ -1,28 +1,19 @@
 class Solution:
-    def maxArea(self, height):
-        left = 0            # Left pointer starting from the leftmost edge
-        right = len(height) - 1  # Right pointer starting from the rightmost edge
-        maxWater = 0        # Initialize the maximum water capacity
-        
-        while left < right:
-            # Calculate the width of the container
-            width = right - left
-            
-            # Calculate the height of the container (the minimum height between the two lines)
-            h = min(height[left], height[right])
-            
-            # Calculate the water capacity of the current container
-            water = width * h
-            
-            # Update the maximum water capacity if the current container holds more water
-            maxWater = max(maxWater, water)
-            
-            # Move the pointers towards each other
-            if height[left] < height[right]:
-                left += 1
-            else:
-                right -= 1
-        
-        return maxWater
+    def maxArea(height):
+        res = 0
+        l = 0
+        r = len(height)-1
 
-# https://leetcode.com/problems/container-with-most-water/solutions/4141944/beats-100-o-n-solution-with-detailed-example-c-java-python-javascript-c-ruby
+        while l < r:
+            area = (r-l) * min(height[r], height[l])
+            res = max(res, area)
+
+            if height[l] < height[r]:
+                l+=1
+            else:
+                r -= 1
+
+        return res
+
+        
+    print(maxArea([1,8,6,2,5,4,8,3,7]))

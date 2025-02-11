@@ -1,18 +1,18 @@
-from typing import Optional
-
+from typing import Optional  # Importing Optional for type hints (not used in this code)
 
 class Solution:
-    def reverseList(head):
+    def reverseList(head):  # Method to reverse a linked list
         if not head:
-            return head
-        ptr1=head
-        ptr2=ptr1.next
-        while ptr2:
-            ptr1.next=ptr2.next
-            ptr2.next=head
-            head=ptr2
-            ptr2=ptr1.next
-        return head
-    
+            return 0
+        
+        pointer1 = head
+        pointer2 = pointer1.next
 
-    # https://leetcode.com/problems/reverse-linked-list/solutions/6060433/0-ms-runtime-beats-100-user-confirm-step-by-steps-solution-beginner-friendly
+
+        while pointer2:
+            pointer1.next = pointer2.next
+            pointer2.next = head
+            head = pointer2
+            pointer2 = pointer1.next
+
+        return head

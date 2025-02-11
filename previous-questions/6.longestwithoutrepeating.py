@@ -1,22 +1,3 @@
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        n = len(s)
-        maxLength = 0
-        charSet = set()
-        left = 0
+    def lengthOfLongestSubstring(self, s: str) -> int:  # Method to find the length of the longest substring without repeating characters
         
-        for right in range(n):
-            if s[right] not in charSet:
-                charSet.add(s[right])
-                maxLength = max(maxLength, right - left + 1)
-            else:
-                while s[right] in charSet:
-                    charSet.remove(s[left])
-                    left += 1
-                charSet.add(s[right])
-        
-        return maxLength
-
-
-
-# https://leetcode.com/problems/longest-substring-without-repeating-characters/solutions/3649636/3-method-s-c-java-python-beginner-friendly

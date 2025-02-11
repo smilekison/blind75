@@ -1,19 +1,20 @@
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode:
+    def __init__(self, x):
+        self.val = x  # Value of the node
+        self.next = None  # Pointer to the next node
 
 class Solution:
-  def hasCycle(self, head: ListNode) -> bool: # type: ignore
-    slow = head
-    fast = head
-    while fast and fast.next:
-      slow = slow.next
-      fast = fast.next.next
-      if slow == fast:
-        return True
-
-    return False
+    def hasCycle(self, head: ListNode) -> bool:  # Method to check if a linked list has a cycle
+        if not head:
+            return False
         
-# https://leetcode.com/problems/linked-list-cycle/solutions/6370769/beats-100-c-python-super-simple-and-efficient-solution-python-c        # 
+        slow, fast = head, head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                return True
+        return False

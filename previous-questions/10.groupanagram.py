@@ -1,18 +1,5 @@
-from collections import defaultdict
-
+from collections import defaultdict  # Import defaultdict to simplify dictionary operations
 
 class Solution:
-    def groupAnagrams(strs: list[str]) -> list[list[str]]:
-        res = defaultdict(list)
-        print(res)
+    def groupAnagrams(strs: list[str]) -> list[list[str]]:  # Method to group anagrams together
         
-        for s in strs:
-            count = [0]*26
-            for c in s:
-                count[ord(c) - ord("a")] += 1
-            
-            res[tuple(count)].append(s)
-
-        return res.values()
-
-    print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))

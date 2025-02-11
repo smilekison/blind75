@@ -1,10 +1,13 @@
 class Solution:
     def containsDuplicate(nums: list[int]) -> bool:
-        
-        newValue = set(nums)
+        # if len(nums) == len(set(nums)):
+        #     return True
+        # return False
 
-        if len(nums) == len(newValue):
-            return False
-        return True
+        char_set = set()
 
-    print(containsDuplicate([1,2,3,4,1]))
+        for v in nums:
+            if v in char_set:
+                return True
+            char_set.add(v)
+        return False

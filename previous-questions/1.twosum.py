@@ -1,13 +1,10 @@
 class Solution:
-    def twoSum(nums: list[int], target: int) -> list[int]:
-        newValue = {}
+    def twoSum(nums: list[int], target: int) -> list[int]:  # Method to find two indices whose values add up to the target
+        arr = {}
 
         for i, v in enumerate(nums):
-            compliment = target - v
-            if compliment in newValue:
-                return [newValue[compliment], i]
-            newValue[v] = i
-        
-        return [newValue[i], i]
-    
-    print(twoSum([2,7,11,15], 26))
+            comp = target -v
+            if comp in arr:
+                return [arr[comp], i]
+            arr[v] = i
+        return [arr[v], i]

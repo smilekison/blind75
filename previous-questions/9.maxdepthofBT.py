@@ -3,17 +3,10 @@ from typing import Optional
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-        
-class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return 0
-        leftDepth = self.maxDepth(root.left)
-        rightDepth = self.maxDepth(root.right)
-        return 1 + max(leftDepth, rightDepth)
-    
+        self.val = val  # Value of the node
+        self.left = left  # Left child of the node
+        self.right = right  # Right child of the node
 
-#     https://leetcode.com/problems/maximum-depth-of-binary-tree/solutions/6090383/0-ms-runtime-beats-100-user-code-idea-algorithm-solving-step
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:  # Method to compute the maximum depth of a binary tree
+        

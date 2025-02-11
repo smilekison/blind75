@@ -1,14 +1,12 @@
 class Solution:
-    def maxProfit(prices: list[int]) -> int:
-        min_price = float('inf')
-        max_profit = 0
+    def maxProfit(prices: list[int]) -> int:  # Method to calculate the maximum profit from stock prices
+        min_price = float("inf")
+        maxP = 0
+
 
         for price in prices:
             if price < min_price:
                 min_price = price
-            elif price - min_price > max_profit:
-                max_profit = price - min_price
-
-        return max_profit
-
-    print(maxProfit([7,1,5,7,4]))
+            elif price - min_price > maxP:
+                maxP = price - min_price
+        return maxP
